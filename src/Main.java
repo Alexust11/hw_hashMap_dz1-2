@@ -47,6 +47,16 @@ public class Main {
         addProduct(new Product("рис",3));
         System.out.println(prodList);
 
+        System.out.println("________________________________________________");
+        Recipe rep1 = new Recipe("сельдь под шубой", 500);
+
+        rep1.addProduct(ListProduct.PRODUCT2);
+        System.out.println(rep1);
+        rep1.getProdukts();
+
+
+
+
 
 
 
