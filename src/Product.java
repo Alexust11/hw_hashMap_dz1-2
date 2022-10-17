@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Product {
-    private String name;// наименование продукта
+    private  final String name;// наименование продукта
     private float weight;// вес покупки продукта
     private boolean purchased=false; // куплен товар или нет
 
