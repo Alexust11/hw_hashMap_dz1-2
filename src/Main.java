@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Main {
     public static Set<Product> prodList=new HashSet<>();
+    public static Set<Recipe> recipes = new HashSet<>();
     public static void main(String[] args) {
 //        Задание 1
 //        Напишите простое приложение для формирования списка продуктов.
@@ -48,11 +49,34 @@ public class Main {
         System.out.println(prodList);
 
         System.out.println("________________________________________________");
-        Recipe rep1 = new Recipe("сельдь под шубой", 500);
+        Recipe reс1 = new Recipe("салатик 1", 500);
+            reс1.addProduct(ListProduct.PRODUCT3);
+            reс1.addProduct(ListProduct.PRODUCT2);
+            reс1.addProduct(ListProduct.PRODUCT9);
+        Recipe reс2 = new Recipe("салатик 2", 800);
+            reс2.addProduct(ListProduct.PRODUCT1);
+            reс2.addProduct(ListProduct.PRODUCT5);
+            reс2.addProduct(ListProduct.PRODUCT6);
+            reс2.addProduct(ListProduct.PRODUCT9);
+        Recipe reс3 = new Recipe("салатик 3", 700);
+            reс3.addProduct(ListProduct.PRODUCT7);
+            reс3.addProduct(ListProduct.PRODUCT4);
+            reс3.addProduct(ListProduct.PRODUCT8);
+        Recipe reс4 = new Recipe("салатик 3", 700);
+            reс4.addProduct(ListProduct.PRODUCT7);
+            reс4.addProduct(ListProduct.PRODUCT4);
+            reс4.addProduct(ListProduct.PRODUCT6);
+        System.out.println(reс1);
+        System.out.println(reс2);
+        System.out.println(reс3);
+        System.out.println("---------------------------------------------");
+//_____________________________________________________________________________
+        addRecipe(reс1);
+        addRecipe(reс2);
+        addRecipe(reс4);
+        addRecipe(reс3);
+        System.out.println(recipes);
 
-        rep1.addProduct(ListProduct.PRODUCT2);
-        System.out.println(rep1);
-        rep1.getProdukts();
 
 
 
@@ -71,4 +95,16 @@ public class Main {
         } else{ prodList.add(product);}
 
     }
+    public static void addRecipe(Recipe recipe) {
+        if (recipes.contains(recipe)) {
+            throw new NullPointerException("рецепт "+recipe.getNameRecipe()+" уже есть в списке");
+
+        } else{ recipes.add(recipe);}
+
+
+    }
+
+
+
+
 }

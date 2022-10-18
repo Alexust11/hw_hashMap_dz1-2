@@ -17,4 +17,8 @@ public enum ListProduct {
     public String getProduct() {
         return product;
     }
+
+    @Override
+    public String toString() {
+        return   product; }
 }

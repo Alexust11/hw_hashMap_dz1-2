@@ -7,37 +7,50 @@
 //        Рецепты не могут иметь одинаковое название — при попытке добавить рецепт с уже занятыми названием необходимо
 //        выбросить исключение. Рецепты с разным названием, содержащие одинаковый список продуктов, считаются разными рецептами.
 
-import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Recipe {
     private String nameRecipe;
     private float summa;
-    private Set<ListProduct[]> produkts=new HashSet<ListProduct[]>();
+    private Set<ListProduct> produkts=new HashSet<ListProduct>();
 
 
     public Recipe(String nameRecipe, float summa) {
         this.nameRecipe = nameRecipe;
         this.summa = summa;
+        if (this.nameRecipe == null|| this.nameRecipe.isEmpty()||this.nameRecipe.isBlank()) {
+            throw new NullPointerException("Не корректно указано название рецепта");
+        }
+        if (this.summa<=0) {
+            throw new NullPointerException("Не корректно указана стоимость продуктов");
+        }
     }
 
-    public void addProduct(ListProduct... listProduct) {
+    public String getNameRecipe() {
+        return nameRecipe;
+    }
+
+    public void addProduct(ListProduct listProduct) {
         produkts.add(listProduct);
     }
 
-    public void getProdukts() {
-        for (int i = 0; i < produkts.size(); i++) {
-            System.out.println(Arrays.toString(produkts.toArray())); ;
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recipe recipe = (Recipe) o;
+        return nameRecipe.equals(recipe.nameRecipe) && produkts.equals(recipe.produkts);
+    }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameRecipe, produkts);
     }
 
     @Override
     public String toString() {
-        return "Recipe{" +
-                "nameRecipe='" + nameRecipe + '\'' +
-                ", summa=" + summa + '}';
+        return "рецепт {" +"Название рецепта='" + nameRecipe  +"' , сумма на продукты=" + summa + " Название продуктов "+ produkts +'}';
     }
 }
