@@ -27,8 +27,8 @@ public class ProdList {
 
     @Override
     public String toString() {
-        return "ProdList{" +
-                "productList=" + productList +
+        return "Список продуктов{" +
+                "продукты=" + productList +
                 '}';
     }
 }

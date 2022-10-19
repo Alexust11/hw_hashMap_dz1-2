@@ -63,7 +63,7 @@ public class Product {
         return
                 "название='" + name + '\'' +
                 ", вес покупки= " + weight +
-                " цена за ед.=' " + unitPrice + '\'' +
+                " цена за кг.=' " + unitPrice + '\'' +
                 '}';
     }
 }
