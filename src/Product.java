@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class Product {
     private  final String name;// наименование продукта
-    private final float weight;// вес покупки продукта
+    private final float weight;// вес купленного продукта
     private final float unitPrice;// цена за ед.товара
     private boolean purchased=false; // куплен товар или нет
 
@@ -60,10 +60,10 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Продукт {" +
+        return
                 "название='" + name + '\'' +
-                ", вес покупки=" + weight +
-                "цена за ед.=' " + unitPrice + '\'' +
+                ", вес покупки= " + weight +
+                " цена за ед.=' " + unitPrice + '\'' +
                 '}';
     }
 }

@@ -51,14 +51,14 @@ public class Main {
 
 
 
-        Recipe reс1 = new Recipe("салатик 1", prod1,prod2,prod3);
+        Recipe reс1 = new Recipe("салатик 1");
 
-        Recipe reс2 = new Recipe("салатик 2",prod3,prod3,prod5 );
+        Recipe reс2 = new Recipe("салатик 2");
 
-        Recipe reс3 = new Recipe("салатик 3",prod6,prod4,prod2 );
+        Recipe reс3 = new Recipe("салатик 3" );
 
-        Recipe reс4 = new Recipe("салатик 3",prod2,prod5,prod3);
-
+        Recipe reс4 = new Recipe("салатик 3");
+            reс1.addProductToRecipe(prod1);
         System.out.println(reс1);
         System.out.println(reс2);
         System.out.println(reс3);
