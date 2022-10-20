@@ -14,7 +14,7 @@ public class Recipe {
     private String nameRecipe;
     private float summa;
     private float weght;
-    private Map<Float,Product> produkts=new HashMap<>();
+    private HashSet<Product> produkts=new HashSet<>();
 
 
     public Recipe(String nameRecipe) {
@@ -25,18 +25,27 @@ public class Recipe {
         }
 
     }
-//    public float priceRecipe() {
-//        float sum=0;
-//        sum=sum+product.getUnitPrice()*weght;
-//        return  sum;
-//    }
+    public void priceRecipe() {
+        float sum=0;
+        for (Product produkt : produkts) {
+            System.out.println("цена за ед. ="+ produkt.getUnitPrice()+ " куплено "+ produkt.getWeight());
+            sum=sum+produkt.getUnitPrice()*produkt.getWeight();
+        }
+
+        System.out.println("общая сумма на продукты на рецепт "+ nameRecipe + " = "+ sum+ " руб.");
+    }
     public String getNameRecipe() {
         return nameRecipe;
     }
 
-    public void addProduct(Float wight, Product product) {
-        produkts.put(wight,product);
-        this.weght=wight;
+    public void addProduct(Product product) {
+        if (produkts.contains(product)) {
+            System.out.println(product.getName()+" уже есть в составе рецепта="+nameRecipe+".  Продукт не будет добавлен");
+
+        } else{  produkts.add(product);}
+
+
+
     }
 
     @Override
@@ -54,7 +63,7 @@ public class Recipe {
 
     @Override
     public String toString() {
-        ArrayList<Product> values = new ArrayList<>(produkts.values());
-        return "рецепт {" +"Название рецепта='" + nameRecipe+" состав"+ values  ;
+
+        return "рецепт {" +"Название рецепта='" + nameRecipe+" состав"+ produkts;
     }
 }

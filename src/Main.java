@@ -2,8 +2,8 @@ import java.sql.Array;
 import java.util.*;
 
 public class Main {
-//    public static Set<Product> prodList=new HashSet<>();
-//    public static Set<Recipe> recipes = new HashSet<>();
+
+    public static Set<Recipe> recipes = new HashSet<>();// список рецептов
      public static List<Integer> numbers=new ArrayList<>();
     public static int size=20;
     public static Random random = new Random();
@@ -45,30 +45,32 @@ public class Main {
 
 
 
-
-
         System.out.println("________________________________________________");
         Recipe reс1 = new Recipe("салатик 1");
-            reс1.addProduct(0.2f,prod1);
-            reс1.addProduct(0.01f,prod4);
-            reс1.addProduct(0.2f,prod6);
+            reс1.addProduct(prod1);
+            reс1.addProduct(prod4);
+            reс1.addProduct(prod6);
+            System.out.println(reс1);
+            reс1.priceRecipe();
+            System.out.println("__________________________________");
         Recipe reс2 = new Recipe("салатик 2");
-//            reс2.addProduct(ListProduct.PRODUCT1);
-//            reс2.addProduct(ListProduct.PRODUCT5);
-//            reс2.addProduct(ListProduct.PRODUCT6);
-//            reс2.addProduct(ListProduct.PRODUCT9);
+            reс2.addProduct(prod1);
+            reс2.addProduct(prod2);
+            reс2.addProduct(prod3);
+            reс2.addProduct(prod3);
+            System.out.println(reс2);
+            reс2.priceRecipe();
+             System.out.println("___________________________________");
         Recipe reс3 = new Recipe("салатик 3");
-//            reс3.addProduct(ListProduct.PRODUCT7);
-//            reс3.addProduct(ListProduct.PRODUCT4);
-//            reс3.addProduct(ListProduct.PRODUCT8);
+
         Recipe reс4 = new Recipe("салатик 3");
-//            reс4.addProduct(ListProduct.PRODUCT7);
-//            reс4.addProduct(ListProduct.PRODUCT4);
-//            reс4.addProduct(ListProduct.PRODUCT6);
 
+        System.out.println();
+        //____________________создание списка рецептов___________________________
+            recipes.add(reс1);
+            recipes.add(reс3);
+            addRecipe(reс2);
 
-        System.out.println(reс1);
-        reс1.priceRecipe();
 //        System.out.println(reс2);
 //        System.out.println(reс3);
 //        System.out.println("---------------------------------------------");
@@ -87,11 +89,11 @@ public class Main {
 //        Пройдитесь по всем элементам множества и удалите из него все нечетные значения.
 //        Выведите оставшиеся элементы в консоль.
 
-//    addNumbers();
-//
-//    getNumbers();
-//    numbersProcessing();
-//    getNumbers();
+    addNumbers();
+
+    getNumbers();
+    numbersProcessing();
+    getNumbers();
 
 
 
@@ -119,21 +121,13 @@ public class Main {
         }
     }
 
-//    public static void addProduct(Product product) {
-//        if (prodList.contains(product)) {
-//            throw new NullPointerException("Продукт уже есть в списке");
-//
-//        } else{ prodList.add(product);}
-//
-//    }
-//    public static void addRecipe(Recipe recipe) {
-//        if (recipes.contains(recipe)) {
-//            throw new NullPointerException("рецепт "+recipe.getNameRecipe()+" уже есть в списке");
-//
-//        } else{ recipes.add(recipe);}
-//
-//
-//    }
+
+    public static void addRecipe(Recipe recipe) {
+        if (recipes.contains(recipe)) {
+            throw new NullPointerException("рецепт "+recipe.getNameRecipe()+" уже есть в списке");
+
+        } else{ recipes.add(recipe);}
+  }
 //
 
 
