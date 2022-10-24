@@ -1,12 +1,10 @@
-import java.sql.Array;
+
 import java.util.*;
 
 public class Main {
 
     public static Set<Recipe> recipes = new HashSet<>();// список рецептов
-     public static List<Integer> numbers=new ArrayList<>();
-    public static int size=20;
-    public static Random random = new Random();
+
     public static void main(String[] args) {
 //        Задание 1
 //        Напишите простое приложение для формирования списка продуктов.
