@@ -43,8 +43,6 @@ public class Main {
             prodList1.addProductList(prod3);
         System.out.println(prodList1);
 
-
-
         System.out.println("________________________________________________");
         Recipe reс1 = new Recipe("салатик 1");
             reс1.addProduct(prod1);
@@ -71,56 +69,13 @@ public class Main {
             recipes.add(reс3);
             addRecipe(reс2);
 
-//        System.out.println(reс2);
-//        System.out.println(reс3);
-//        System.out.println("---------------------------------------------");
-////_____________________________________________________________________________
-//        addRecipe(reс1);
-//        addRecipe(reс2);
-//        addRecipe(reс4);
-//        addRecipe(reс3);
-//        System.out.println(recipes);
-//
-//
-//
-//
-//____________________________________Д/З 2 часть 2____________________________________
-//        Создайте множество целых чисел. Заполните множество 20 случайными числами в диапазоне от 0 до 1000.
-//        Пройдитесь по всем элементам множества и удалите из него все нечетные значения.
-//        Выведите оставшиеся элементы в консоль.
 
-    addNumbers();
 
-    getNumbers();
-    numbersProcessing();
-    getNumbers();
 
 
 
 
     }
-    public static void numbersProcessing() {
-        for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i) % 2 > 0) {
-                numbers.remove(i);
-            }
-        }
-    }
-    public static void addNumbers() {
-        for (int i = 0; i < size; i++) {
-            numbers.add(random.nextInt(1000));
-        }
-
-//        for (Double number : numbers) {
-//             ;
-//       }
-    }
-    public static void getNumbers() {
-        for (int i = 0; i < numbers.size(); i++) {
-            System.out.println("номер= "+i+" :"+numbers.get(i));
-        }
-    }
-
 
     public static void addRecipe(Recipe recipe) {
         if (recipes.contains(recipe)) {
